@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run eslint && npm run prettier && npm run stylelint",
     "eslint": "eslint --fix .",
     "prettier": "prettier --write .",
     "stylelint": "stylelint --fix **/*.{less,css,vue}"

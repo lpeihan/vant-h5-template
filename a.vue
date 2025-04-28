@@ -3,11 +3,7 @@
   <div />
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-let a = 'aaa';
-</script>
+<script setup></script>
 
 <style lang="less" scoped>
 .a {
