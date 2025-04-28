@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "age":   18,
+  "age":    18,
   "gender": "male",
   "address": {
     "city": "Beijing",
