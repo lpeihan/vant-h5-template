@@ -5,7 +5,7 @@
   "address": {
     "city":    "Beijing",
     "street": "Beijing Road",
-    "zipcode": "100000"
+    "zipcode":  "100000"
   },
   "hobbies": ["reading", "running", "traveling"]
 }
