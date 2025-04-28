@@ -8,6 +8,10 @@
     "prettier": "prettier --write .",
     "stylelint": "stylelint --fix **/*.{less,css,vue}"
   },
+  "packageManager": "pnpm@9.1.0",
+  "engines": {
+    "node": ">=18.20.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
