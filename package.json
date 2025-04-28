@@ -10,8 +10,7 @@
     "depcheck": "depcheck",
     "cspell": "cspell .",
     "prepare": "husky",
-    "preinstall": "npx only-allow pnpm",
-    "commit": "cz"
+    "preinstall": "npx only-allow pnpm"
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {
