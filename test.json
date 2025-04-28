@@ -3,9 +3,9 @@
   "age": 18,
   "gender": "male",
   "address": {
-    "city":    "Beijing",
+    "city": "Beijing",
     "street": "Beijing Road",
-    "zipcode":  "100000"
+    "zipcode": "100000"
   },
   "hobbies": ["reading", "running", "traveling"]
 }
