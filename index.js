@@ -4,3 +4,5 @@ module.exports = {
   description: 'test',
   main: 'index.js',
 };
+
+console.log('test');
