@@ -1,5 +1,10 @@
 {
   "name": "test",
   "age":   18,
-  "gender": "male"
+  "gender": "male",
+  "address": {
+    "city": "Beijing",
+    "street":  "Beijing Road",
+    "zipcode": "100000"
+  }
 }
