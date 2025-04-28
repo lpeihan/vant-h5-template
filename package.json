@@ -6,19 +6,23 @@
     "lint": "npm run eslint && npm run prettier && npm run stylelint",
     "eslint": "eslint --fix .",
     "prettier": "prettier --write .",
-    "stylelint": "stylelint --fix **/*.{less,css,vue}"
+    "stylelint": "stylelint --fix **/*.{less,css,vue}",
+    "depcheck": "depcheck",
+    "cspell": "cspell ."
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {
-    "node": ">=18.20.0"
+    "node": ">=18.20.0",
+    "pnpm": ">=9.1.0"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
-    "@eslint/config-inspector": "^1.0.2",
     "@eslint/js": "^9.25.1",
+    "cspell": "^8.19.3",
+    "depcheck": "^1.4.7",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",

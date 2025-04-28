@@ -3,7 +3,9 @@
   <div />
 </template>
 
-<script setup></script>
+<script setup>
+console.log('solana');
+</script>
 
 <style lang="less" scoped>
 .a {
