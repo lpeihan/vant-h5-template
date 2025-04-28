@@ -8,15 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@commitlint/cli':
+        specifier: ^19.8.0
+        version: 19.8.0(@types/node@22.15.3)(typescript@5.8.3)
       '@commitlint/config-conventional':
         specifier: ^19.8.0
         version: 19.8.0
       '@eslint/js':
         specifier: ^9.25.1
         version: 9.25.1
-      commitlint:
-        specifier: ^19.8.0
-        version: 19.8.0(@types/node@22.15.3)(typescript@5.8.3)
       cspell:
         specifier: ^8.19.3
         version: 8.19.3
@@ -794,11 +794,6 @@ packages:
   comment-json@4.2.5:
     resolution: {integrity: sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw==}
     engines: {node: '>= 6'}
-
-  commitlint@19.8.0:
-    resolution: {integrity: sha512-O5waRm0RsjH1g2sT4ifTV58sBYW3wPjfclsdicj1NWUyF91aF0fSqFgKC8EEOUi9RRLKBOhlJarS6V1jWIUx1Q==}
-    engines: {node: '>=v18'}
-    hasBin: true
 
   compare-func@2.0.0:
     resolution: {integrity: sha512-zHig5N+tPWARooBnb0Zx1MFcdfpyJrfTJ3Y5L+IFvUm8rM74hHz66z0gw0x4tijh5CorKkKUCnW82R2vmpeCRA==}
@@ -3235,14 +3230,6 @@ snapshots:
       esprima: 4.0.1
       has-own-prop: 2.0.0
       repeat-string: 1.6.1
-
-  commitlint@19.8.0(@types/node@22.15.3)(typescript@5.8.3):
-    dependencies:
-      '@commitlint/cli': 19.8.0(@types/node@22.15.3)(typescript@5.8.3)
-      '@commitlint/types': 19.8.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - typescript
 
   compare-func@2.0.0:
     dependencies:
