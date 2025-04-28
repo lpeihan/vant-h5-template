@@ -4,7 +4,8 @@
   "gender": "male",
   "address": {
     "city": "Beijing",
-    "street":  "Beijing Road",
+    "street":   "Beijing Road",
     "zipcode": "100000"
-  }
+  },
+  "hobbies":  ["reading", "running", "traveling"]
 }
