@@ -9,7 +9,8 @@
     "stylelint": "stylelint --fix **/*.{less,css,vue}",
     "depcheck": "depcheck",
     "cspell": "cspell .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preinstall": "npx only-allow pnpm"
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {

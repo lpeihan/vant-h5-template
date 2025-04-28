@@ -1,11 +1,11 @@
 {
   "name": "test",
-  "age":    18,
+  "age": 18,
   "gender": "male",
   "address": {
     "city": "Beijing",
-    "street":   "Beijing Road",
+    "street": "Beijing Road",
     "zipcode": "100000"
   },
-  "hobbies":  ["reading", "running", "traveling"]
+  "hobbies": ["reading", "running", "traveling"]
 }
