@@ -3,16 +3,6 @@
   "version": "0.2",
   "language": "en,en-US",
   "allowCompoundWords": true,
-  "ignorePaths": [
-    "node_modules",
-    "pnpm-lock.yaml",
-    "dist"
-  ],
-  "words": [
-    "antd",
-    "pxtorem",
-    "unplugin",
-    "vant",
-    "vueuse"
-  ]
+  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "dist"],
+  "words": ["antd", "pxtorem", "unplugin", "vant", "vueuse"]
 }
