@@ -11,11 +11,18 @@ export default defineConfig([
   {
     ignores: ['node_modules', 'dist', 'public', '.DS_Store'],
   },
+  tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
     plugins: { js },
     extends: ['js/recommended'],
     rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
+      'import/named': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'import/no-named-as-default': 'off',
+
       'import/no-unresolved': 'off',
       'import/no-duplicates': 'error',
       'import/newline-after-import': ['error', { count: 1 }],
@@ -43,9 +50,13 @@ export default defineConfig([
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,vue}'],
-    languageOptions: { globals: globals.node },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
   },
-  tseslint.configs.recommended,
   pluginVue.configs['flat/essential'],
   prettier,
   {

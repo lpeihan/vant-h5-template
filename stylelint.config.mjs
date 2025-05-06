@@ -5,4 +5,10 @@ export default {
     'stylelint-config-standard-vue',
   ],
   ignoreFiles: ['node_modules/**/*', 'dist/**/*', 'public/**/*'],
+  rules: {
+    'no-descending-specificity': null,
+    'selector-class-pattern': null,
+    'custom-property-empty-line-before': null,
+    'declaration-property-value-no-unknown': null,
+  },
 };
