@@ -19,10 +19,10 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
-      'import/named': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
-      'import/no-named-as-default': 'off',
 
+      'import/named': 'off',
+      'import/no-named-as-default': 'off',
       'import/no-unresolved': 'off',
       'import/no-duplicates': 'error',
       'import/newline-after-import': ['error', { count: 1 }],
