@@ -4,12 +4,9 @@ const CopyPlugin = require('copy-webpack-plugin');
 const dayjs = require('dayjs');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
-// const AutoImport = require('unplugin-auto-import/webpack');
 const ComponentsPlugin = require('unplugin-vue-components/webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin, ProvidePlugin } = require('webpack');
-
-const { version } = require('../package.json');
 
 const loadEnv = require('./utils/loadEnv');
 const paths = require('./utils/paths');
@@ -178,17 +175,13 @@ module.exports = {
           return env;
         },
         {
-          VERSION: JSON.stringify(version),
+          VERSION: JSON.stringify(require('../package.json').version),
           BUILD_TIME: JSON.stringify(dayjs().format('YYYY-MM-DD HH:mm:ss')),
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
           MODE: JSON.stringify(process.env.MODE),
         },
       ),
     }),
-
-    // AutoImport.default({
-    //   resolvers: [VantResolver()],
-    // }),
 
     ComponentsPlugin({
       dirs: [paths.resolve('src/components')],

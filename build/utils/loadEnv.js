@@ -4,12 +4,10 @@ const dotenv = require('dotenv');
 
 const paths = require('./paths');
 
-function loadEnv(mode = 'local') {
-  const envFiles = [];
+function loadEnv(mode) {
+  const envFiles = ['.env'];
 
-  if (mode === 'local') {
-    envFiles.push('.env.local');
-  } else {
+  if (mode === 'prod') {
     envFiles.push('.env.production');
   }
 
