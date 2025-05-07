@@ -123,6 +123,12 @@ importers:
       depcheck:
         specifier: ^1.4.7
         version: 1.4.7
+      dotenv:
+        specifier: ^16.5.0
+        version: 16.5.0
+      dotenv-webpack:
+        specifier: ^8.1.0
+        version: 8.1.0(webpack@5.99.7)
       eslint:
         specifier: ^9.25.1
         version: 9.26.0(jiti@2.4.2)
@@ -2550,6 +2556,23 @@ packages:
   dot-prop@5.3.0:
     resolution: {integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==}
     engines: {node: '>=8'}
+
+  dotenv-defaults@2.0.2:
+    resolution: {integrity: sha512-iOIzovWfsUHU91L5i8bJce3NYK5JXeAwH50Jh6+ARUdLiiGlYWfGw6UkzsYqaXZH/hjE/eCd/PlfM/qqyK0AMg==}
+
+  dotenv-webpack@8.1.0:
+    resolution: {integrity: sha512-owK1JcsPkIobeqjVrk6h7jPED/W6ZpdFsMPR+5ursB7/SdgDyO+VzAU+szK8C8u3qUhtENyYnj8eyXMR5kkGag==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      webpack: ^4 || ^5
+
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+    engines: {node: '>=12'}
+
+  dotenv@8.6.0:
+    resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
+    engines: {node: '>=10'}
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -8642,6 +8665,19 @@ snapshots:
   dot-prop@5.3.0:
     dependencies:
       is-obj: 2.0.0
+
+  dotenv-defaults@2.0.2:
+    dependencies:
+      dotenv: 8.6.0
+
+  dotenv-webpack@8.1.0(webpack@5.99.7):
+    dependencies:
+      dotenv-defaults: 2.0.2
+      webpack: 5.99.7(webpack-cli@6.0.1)
+
+  dotenv@16.5.0: {}
+
+  dotenv@8.6.0: {}
 
   dunder-proto@1.0.1:
     dependencies:

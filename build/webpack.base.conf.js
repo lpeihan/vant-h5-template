@@ -9,27 +9,24 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin, ProvidePlugin } = require('webpack');
 
-const config = require('../config');
 const { version } = require('../package.json');
 
+const loadEnv = require('./utils/loadEnv');
 const paths = require('./utils/paths');
 
-const isProd = process.env.NODE_ENV === 'production';
-const outputFileName = `js/[name]${isProd ? '.[contenthash:8]' : ''}.js`;
+const outputFileName = `js/[name]${process.env.NODE_ENV === 'production' ? '.[contenthash:8]' : ''}.js`;
+
+loadEnv(process.env.MODE);
 
 module.exports = {
   context: process.cwd(),
-
-  // externals: {
-  //   vconsole: 'VConsole',
-  // },
 
   entry: {
     app: './src/main.js',
   },
 
   output: {
-    path: paths.resolve(config.outputDir),
+    path: paths.resolve('dist'),
     publicPath: '/',
     filename: outputFileName,
     chunkFilename: outputFileName,
@@ -173,11 +170,20 @@ module.exports = {
       __VUE_OPTIONS_API__: JSON.stringify(true),
       __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false),
-      'process.env': {
-        ...config.env,
-        VERSION: JSON.stringify(version),
-        BUILD_TIME: JSON.stringify(dayjs().format('YYYY-MM-DD HH:mm:ss')),
-      },
+      'process.env': Object.keys(process.env).reduce(
+        (env, key) => {
+          if (key.startsWith('VUE_APP_')) {
+            env[key] = JSON.stringify(process.env[key]);
+          }
+          return env;
+        },
+        {
+          VERSION: JSON.stringify(version),
+          BUILD_TIME: JSON.stringify(dayjs().format('YYYY-MM-DD HH:mm:ss')),
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+          MODE: JSON.stringify(process.env.MODE),
+        },
+      ),
     }),
 
     // AutoImport.default({

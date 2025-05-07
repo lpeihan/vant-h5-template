@@ -3,8 +3,6 @@
 const ProgressPlugin = require('progress-webpack-plugin');
 const { merge } = require('webpack-merge');
 
-const config = require('../config');
-
 const cssConf = require('./css.conf');
 const webpackBaseConf = require('./webpack.base.conf');
 
@@ -21,7 +19,7 @@ module.exports = merge(webpackBaseConf, cssConf, {
     },
     open: true,
     host: '0.0.0.0',
-    port: config.port,
+    port: 8088,
     hot: true,
     client: {
       overlay: false,
