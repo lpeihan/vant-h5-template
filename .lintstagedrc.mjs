@@ -1,5 +1,5 @@
 export default {
-  '*.{js,mjs,cjs,ts,vue}': ['npm run eslint', 'npm run prettier'],
-  '*.{less,css,vue,html}': ['npm run stylelint', 'npm run prettier'],
-  '*.md, *.json': ['npm run prettier'],
+  '*.{js,mjs,cjs,ts,vue}': ['eslint --fix', 'prettier --write'],
+  '*.{less,css,vue,html}': ['stylelint --fix', 'prettier --write'],
+  '*.{md,json}': ['prettier --write'],
 };
