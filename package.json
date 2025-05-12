@@ -9,7 +9,7 @@
     "lint": "npm run eslint && npm run prettier && npm run stylelint",
     "eslint": "eslint --fix .",
     "prettier": "prettier --write .",
-    "stylelint": "stylelint --fix **/*.{less,css,vue}",
+    "stylelint": "stylelint --fix '**/*.{less,css,vue}'",
     "depcheck": "depcheck",
     "cspell": "cspell .",
     "prepare": "husky",
