@@ -1,4 +1,4 @@
-# Divine
+# vant-h5-template
 
 ## environment
 
