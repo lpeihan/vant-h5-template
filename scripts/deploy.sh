@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ENV=${MODE}
+ENV=${ENV}
 DIST_ZIP_NAME="dist.zip"
 REMOTE_USER="root"
 DEPLOY_PATH="/home/divine"

@@ -13,7 +13,7 @@ const paths = require('./utils/paths');
 
 const outputFileName = `js/[name]${process.env.NODE_ENV === 'production' ? '.[contenthash:8]' : ''}.js`;
 
-loadEnv(process.env.MODE);
+loadEnv(process.env.ENV);
 
 module.exports = {
   context: process.cwd(),
@@ -178,7 +178,7 @@ module.exports = {
           VERSION: JSON.stringify(require('../package.json').version),
           BUILD_TIME: JSON.stringify(dayjs().format('YYYY-MM-DD HH:mm:ss')),
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-          MODE: JSON.stringify(process.env.MODE),
+          ENV: JSON.stringify(process.env.ENV),
         },
       ),
     }),
