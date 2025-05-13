@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development MODE=local node build/dev-server.js",
     "build": "cross-env NODE_ENV=production MODE=prod node build/build.js",
-    "deploy:development": "cross-env MODE=development npm run build && ./scripts/deploy.sh",
+    "deploy:test": "cross-env MODE=test ./scripts/deploy.sh",
     "deploy:production": "cross-env MODE=production npm run build && ./scripts/deploy.sh",
     "lint": "npm run eslint && npm run prettier && npm run stylelint",
     "eslint": "eslint --fix .",

@@ -5,11 +5,9 @@ const dotenv = require('dotenv');
 const paths = require('./paths');
 
 function loadEnv(mode) {
-  const envFiles = ['.env'];
+  const envFiles = ['.env.test'];
 
-  if (mode === 'prod') {
-    envFiles.push('.env.production');
-  }
+  envFiles.push(`.env.${mode}`);
 
   envFiles.forEach((file) => {
     const fullPath = paths.resolve(file);
