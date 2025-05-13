@@ -14,15 +14,6 @@ fi
 source "$ENV_FILE"
 source "$(dirname "$0")/../.env.local"
 
-case $ENV in
-    "test")
-        REMOTE_PASS=$REMOTE_PASS_DEVELOPMENT
-        ;;
-    "production")
-        REMOTE_PASS=$REMOTE_PASS_PRODUCTION
-        ;;
-esac
-
 ssh-keygen -R $REMOTE_HOST
 ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
 

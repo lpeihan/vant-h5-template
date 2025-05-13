@@ -29,3 +29,9 @@ https://free-icons.github.io/free-icons/
 https://www.netlify.com/
 
 ```
+
+## Create .env.local
+
+```shell
+REMOTE_PASS=A49OXa#t4M!0
+```
