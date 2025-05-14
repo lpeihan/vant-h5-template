@@ -3,7 +3,7 @@
 ENV=${ENV}
 DIST_ZIP_NAME="dist.zip"
 REMOTE_USER="root"
-DEPLOY_PATH="/home/divine"
+DEPLOY_PATH="/home/web"
 ENV_FILE="$(dirname "$0")/../.env.$ENV"
 
 GREEN='\033[0;32m'
@@ -18,8 +18,8 @@ TEMP_KEY_FILE=$(mktemp)
 echo "$PRIVATE_KEY" > "$TEMP_KEY_FILE"
 chmod 600 "$TEMP_KEY_FILE"
 
-ssh-keygen -R $REMOTE_HOST
-ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
+# ssh-keygen -R $REMOTE_HOST
+# ssh-keyscan -H $REMOTE_HOST >> ~/.ssh/known_hosts
 
 log_info() {
     echo -e "${BLUE}[INFO] $1${NC}"
@@ -59,4 +59,4 @@ fi
 
 rm -f "$TEMP_KEY_FILE"
 
-log_success "deployed successfully!"
+log_success "deployed to $REMOTE_HOST:$DEPLOY_PATH successfully!"
