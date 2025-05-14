@@ -1,5 +1,6 @@
 'use strict';
 
+const { codeInspectorPlugin } = require('code-inspector-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
 const { merge } = require('webpack-merge');
 
@@ -11,7 +12,12 @@ module.exports = merge(webpackBaseConf, cssConf, {
 
   devtool: 'eval-cheap-module-source-map',
 
-  plugins: [new ProgressPlugin(true)],
+  plugins: [
+    new ProgressPlugin(true),
+    codeInspectorPlugin({
+      bundler: 'webpack',
+    }),
+  ],
 
   devServer: {
     historyApiFallback: {
