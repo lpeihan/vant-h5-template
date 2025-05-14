@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const { VantResolver } = require('@vant/auto-import-resolver');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -15,12 +17,27 @@ const outputFileName = `js/[name]${process.env.NODE_ENV === 'production' ? '.[co
 
 loadEnv(process.env.ENV);
 
+const entries = {
+  index: './src/main.js',
+  // admin: './src/admin.js',
+};
+
+const htmlPlugins = Object.keys(entries).map(
+  (name) =>
+    new HTMLPlugin({
+      template: paths.resolve(`public/${name}.html`),
+      filename: `${name}.html`,
+      chunks: [name, 'chunk-vendors', 'chunk-common'],
+      templateParameters: {
+        BASE_URL: '/',
+      },
+    }),
+);
+
 module.exports = {
   context: process.cwd(),
 
-  entry: {
-    app: './src/main.js',
-  },
+  entry: entries,
 
   output: {
     path: paths.resolve('dist'),
@@ -134,15 +151,10 @@ module.exports = {
 
   plugins: [
     new ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'], // ['包名', '包中的值']
+      Buffer: ['buffer', 'Buffer'],
     }),
     new VueLoaderPlugin(),
-    new HTMLPlugin({
-      template: paths.resolve('public/index.html'),
-      templateParameters: {
-        BASE_URL: '/',
-      },
-    }),
+    ...htmlPlugins,
     new CaseSensitivePathsPlugin(),
     new CopyPlugin({
       patterns: [
