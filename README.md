@@ -1,6 +1,6 @@
-# vant-h5-template
+# Vant H5 Template
 
-## environment
+## Environment
 
 ```shell
 # use specified version of node https://github.com/nvm-sh/nvm
@@ -20,7 +20,7 @@ pnpm run deploy:production
 chmod +x ./scripts/deploy.sh
 ```
 
-## tools
+## Tools
 
 ```shell
 # Icons
@@ -34,8 +34,11 @@ https://cloudconvert.com/png-to-ico
 
 ```
 
-## Create .env.local
+## .env.local
 
 ```shell
 REMOTE_PASS=A49OXa#t4M!0
+PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----"
 ```
