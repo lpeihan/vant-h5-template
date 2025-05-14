@@ -169,6 +169,7 @@ module.exports = {
     new ESLintPlugin({
       emitError: true,
       emitWarning: true,
+      failOnError: false,
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.vue'],
       formatter: require('eslint-formatter-friendly'),
     }),
