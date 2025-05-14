@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const { VantResolver } = require('@vant/auto-import-resolver');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');

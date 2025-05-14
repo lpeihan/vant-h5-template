@@ -20,7 +20,6 @@ export default defineConfig([
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
 
       'no-unused-vars': 'off',
       'import/named': 'off',
