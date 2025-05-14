@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development ENV=local node build/dev-server.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
+    "analyze": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "deploy:test": "cross-env ENV=test sh -c 'npm run build && ./scripts/deploy.sh'",
     "deploy:production": "cross-env ENV=production sh -c 'npm run build && ./scripts/deploy.sh'",
     "lint": "npm run eslint && npm run prettier && npm run stylelint",
