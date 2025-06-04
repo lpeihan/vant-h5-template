@@ -28,8 +28,8 @@ module.exports = merge(webpackBaseConf, cssConf, {
     },
     proxy: [
       {
-        context: ['/v1'],
-        target: 'http://43.198.71.208:8080',
+        context: ['/api/v1'],
+        target: '',
       },
     ],
     setupMiddlewares(middlewares, devServer) {

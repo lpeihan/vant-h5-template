@@ -4,10 +4,10 @@ const dotenv = require('dotenv');
 
 const paths = require('./paths');
 
-function loadEnv(mode) {
+function loadEnv(env) {
   const envFiles = ['.env.test'];
 
-  envFiles.push(`.env.${mode}`);
+  envFiles.push(`.env.${env}`);
 
   envFiles.forEach((file) => {
     const fullPath = paths.resolve(file);
