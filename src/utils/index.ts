@@ -41,7 +41,7 @@ export function getUUID() {
   return uuid.slice(0, 8);
 }
 
-export function formatWalletAddress(walletAddress) {
+export function formatWallet(walletAddress) {
   if (!walletAddress) {
     return;
   }
