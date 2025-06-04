@@ -1,3 +1,9 @@
 import loading from './loading';
 
-export { loading };
+export const showLoading = () => {
+  loading.open();
+};
+
+export const closeLoading = () => {
+  loading.close();
+};

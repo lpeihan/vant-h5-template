@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { showToast } from 'vant';
 
-import { loading } from '@/components';
+import { closeLoading, showLoading } from '@/components';
 import { CODE_SUCCESS } from '@/utils/constants';
 
 let loadCount = 0;
@@ -15,7 +15,7 @@ const request = axios.create({
 request.interceptors.request.use(
   (config) => {
     if (config.loading && ++loadCount > 0) {
-      loading.open();
+      showLoading();
     }
 
     return config;
@@ -30,7 +30,7 @@ request.interceptors.response.use(
     const { config, data } = res;
 
     if (config.loading && --loadCount <= 0) {
-      loading.close();
+      closeLoading();
     }
 
     if (data.code === CODE_SUCCESS) {
@@ -45,7 +45,7 @@ request.interceptors.response.use(
     const { config } = err;
 
     if (config.loading && --loadCount <= 0) {
-      loading.close();
+      closeLoading();
     }
 
     showToast(err.message);

@@ -1,0 +1,533 @@
+{
+  "address": "AAaENevvTe2HM7TcP6AHLq49NhZbB3xKPxYCrjKkyv2Q",
+  "metadata": {
+    "name": "gdtcStaking",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "cancelStaking",
+      "discriminator": [2, 183, 90, 76, 17, 140, 174, 5],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "stakingInstance",
+          "writable": true
+        },
+        {
+          "name": "userInstance",
+          "writable": true
+        },
+        {
+          "name": "userLpTokenAccount",
+          "writable": true
+        },
+        {
+          "name": "gdtcLpInAccount",
+          "writable": true
+        },
+        {
+          "name": "pdaAccount",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [108, 112, 95, 116, 111, 107, 101, 110]
+              }
+            ]
+          }
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "tokenProgram",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "stakedInfoIndex",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "claimRewards",
+      "discriminator": [4, 144, 132, 71, 116, 23, 151, 80],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "stakingInstance",
+          "writable": true
+        },
+        {
+          "name": "userInstance",
+          "writable": true
+        },
+        {
+          "name": "superInstance",
+          "writable": true
+        },
+        {
+          "name": "userSuperGdtcTokenAccount",
+          "writable": true
+        },
+        {
+          "name": "userGdtcTokenAccount",
+          "writable": true
+        },
+        {
+          "name": "gdtcRewardOutAccount",
+          "writable": true
+        },
+        {
+          "name": "pdaAccount",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [108, 112, 95, 116, 111, 107, 101, 110]
+              }
+            ]
+          }
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "tokenProgram",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "stakedInfoIndex",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "enterStaking",
+      "discriminator": [6, 26, 79, 73, 227, 51, 221, 91],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "stakingInstance",
+          "writable": true
+        },
+        {
+          "name": "userInstance",
+          "writable": true
+        },
+        {
+          "name": "userLpTokenAccount",
+          "writable": true
+        },
+        {
+          "name": "gdtcLpInAccount",
+          "writable": true
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "tokenProgram",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        }
+      ],
+      "args": [
+        {
+          "name": "lpStakingNumber",
+          "type": "u64"
+        },
+        {
+          "name": "stakeType",
+          "type": "u64"
+        },
+        {
+          "name": "stakedInfoIndex",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initializeStaking",
+      "discriminator": [184, 41, 251, 154, 146, 145, 197, 77],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "stakingInstance",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115, 116, 97, 107, 105, 110, 103, 95, 105, 110, 115, 116, 97, 110, 99, 101
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewardTokenMint"
+        },
+        {
+          "name": "stakingTokenMint"
+        },
+        {
+          "name": "lpTokenAccount"
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "rewardPerSec3Months",
+          "type": "u64"
+        },
+        {
+          "name": "rewardPerSec6Months",
+          "type": "u64"
+        },
+        {
+          "name": "rewardPerSec12Months",
+          "type": "u64"
+        },
+        {
+          "name": "startRewardTimestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "initializeUser",
+      "discriminator": [111, 17, 185, 250, 60, 122, 38, 254],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "stakingInstance",
+          "writable": true
+        },
+        {
+          "name": "userInstance",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [117, 115, 101, 114, 95, 100, 101, 112, 111, 115, 105, 116]
+              },
+              {
+                "kind": "account",
+                "path": "stakingInstance"
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              }
+            ]
+          }
+        },
+        {
+          "name": "userSuperiorTokenAccount"
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "stakingInstance",
+      "discriminator": [136, 97, 142, 120, 237, 93, 134, 171]
+    },
+    {
+      "name": "user",
+      "discriminator": [159, 117, 95, 227, 239, 151, 58, 236]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "invalidStakeType",
+      "msg": "Invalid stake type provided. The stake type must correspond to an existing pool."
+    },
+    {
+      "code": 6001,
+      "name": "invalidStakedInfoIndex",
+      "msg": "Invalid stake staked info index."
+    },
+    {
+      "code": 6002,
+      "name": "tokenAccountBalanceInsufficient",
+      "msg": "Insufficient token account balance."
+    },
+    {
+      "code": 6003,
+      "name": "clockUnavailable",
+      "msg": "Failed to fetch system clock."
+    },
+    {
+      "code": 6004,
+      "name": "mintAccountIsNotMatch",
+      "msg": "User token account mint does not match staking token mint."
+    },
+    {
+      "code": 6005,
+      "name": "overflow",
+      "msg": "Arithmetic overflow occurred."
+    },
+    {
+      "code": 6006,
+      "name": "underflow",
+      "msg": "Arithmetic underflow occurred."
+    },
+    {
+      "code": 6007,
+      "name": "userAlreadyStaked",
+      "msg": "User has already staked and cannot stake again."
+    },
+    {
+      "code": 6008,
+      "name": "noStakingToCancel",
+      "msg": "User has no staking to cancel."
+    },
+    {
+      "code": 6009,
+      "name": "stakingNotMatured",
+      "msg": "Staking period has not matured yet."
+    },
+    {
+      "code": 6010,
+      "name": "noRewardsToClaim",
+      "msg": "No rewards available to claim."
+    },
+    {
+      "code": 6011,
+      "name": "insufficientRewardBalance",
+      "msg": "Insufficient reward account balance."
+    },
+    {
+      "code": 6012,
+      "name": "noStakingToClaimRewards",
+      "msg": "No Staking available to claim."
+    },
+    {
+      "code": 6013,
+      "name": "userSuperiorTokenAccountIsNotMatch",
+      "msg": "UserSuperiorTokenAccount  does not match."
+    },
+    {
+      "code": 6014,
+      "name": "userAccountIsNotMatch",
+      "msg": "User address  does not match."
+    },
+    {
+      "code": 6015,
+      "name": "needCliamRewards",
+      "msg": "User need cliam rewards."
+    },
+    {
+      "code": 6016,
+      "name": "invalidStakingInstance",
+      "msg": "The provided staking instance is not a valid staking instance for this contract."
+    },
+    {
+      "code": 6017,
+      "name": "stakingEnded",
+      "msg": "The staking has ended for this instance."
+    },
+    {
+      "code": 6018,
+      "name": "invalidUserInstance",
+      "msg": "The provided user instance is not a valid user instance for this contract."
+    },
+    {
+      "code": 6019,
+      "name": "pdaAccountIsNotMatch",
+      "msg": "Pda address  does not match."
+    }
+  ],
+  "types": [
+    {
+      "name": "staked",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "depositedAmount",
+            "type": "u64"
+          },
+          {
+            "name": "rewardDebt",
+            "type": "u64"
+          },
+          {
+            "name": "accumulatedReward",
+            "type": "u64"
+          },
+          {
+            "name": "isStaked",
+            "type": "bool"
+          },
+          {
+            "name": "stakeType",
+            "type": "u64"
+          },
+          {
+            "name": "stakeStartTime",
+            "type": "u64"
+          },
+          {
+            "name": "stakeEndTime",
+            "type": "u64"
+          },
+          {
+            "name": "receivedReward",
+            "type": "u64"
+          },
+          {
+            "name": "canCancelStake",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "stakingInstance",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "rewardTokenMint",
+            "type": "pubkey"
+          },
+          {
+            "name": "stakingTokenMint",
+            "type": "pubkey"
+          },
+          {
+            "name": "pools",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "stakingPool"
+                  }
+                },
+                3
+              ]
+            }
+          },
+          {
+            "name": "lpTokenAccount",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "stakingPool",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "stakeType",
+            "type": "u64"
+          },
+          {
+            "name": "rewardTokenPerSec",
+            "type": "u64"
+          },
+          {
+            "name": "accumulatedRewardPerShare",
+            "type": "u64"
+          },
+          {
+            "name": "lastRewardTimestamp",
+            "type": "u64"
+          },
+          {
+            "name": "totalShares",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "user",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "totalDepositedAmount",
+            "type": "u64"
+          },
+          {
+            "name": "userSuperiorTokenAccount",
+            "type": "pubkey"
+          },
+          {
+            "name": "stakedInfo",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "staked"
+                  }
+                },
+                10
+              ]
+            }
+          },
+          {
+            "name": "isinit",
+            "type": "bool"
+          },
+          {
+            "name": "userAddress",
+            "type": "pubkey"
+          }
+        ]
+      }
+    }
+  ]
+}
