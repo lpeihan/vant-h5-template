@@ -1,5 +1,5 @@
 <template>
-  <van-config-provider theme="dark">
+  <van-config-provider theme="light">
     <div class="app-root">
       <router-view v-slot="{ Component }">
         <keep-alive :include="state.keepAlive">

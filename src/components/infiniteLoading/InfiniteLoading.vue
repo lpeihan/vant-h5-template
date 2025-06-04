@@ -191,7 +191,7 @@ const callback = (params, error) => {
     align-items: center;
     justify-content: center;
     height: @height;
-    color: var(--text-color-3);
+    color: var(--van-text-color-2);
   }
 
   .empty-wrapper {
@@ -205,7 +205,7 @@ const callback = (params, error) => {
     .text {
       margin-top: 8px;
       font-size: 13px;
-      color: var(--text-color-3);
+      color: var(--van-text-color-2);
     }
   }
 

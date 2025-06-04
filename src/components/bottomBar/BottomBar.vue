@@ -72,7 +72,7 @@ const handleClick = (item) => {
   align-items: center;
   height: var(--bottom-bar-height);
   padding: 0 0 2px;
-  background: var(--white);
+  background: var(--van-white);
   box-shadow: 0 0 1px rgba(#c1c1c1, 0.5);
 
   .bar-item {
@@ -84,7 +84,7 @@ const handleClick = (item) => {
 
       .text {
         position: relative;
-        color: var(--primary-color);
+        color: var(--van-primary-color);
       }
     }
 
@@ -95,7 +95,7 @@ const handleClick = (item) => {
 
     .text {
       font-size: 12px;
-      color: var(--text-color-3);
+      color: var(--van-text-color-2);
     }
   }
 }

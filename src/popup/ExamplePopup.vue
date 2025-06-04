@@ -27,6 +27,5 @@ defineExpose({
 .popup-content {
   width: 300px;
   height: 300px;
-  color: var(--van-text-color);
 }
 </style>
