@@ -3,7 +3,6 @@ import { createApp } from 'vue';
 let root;
 let app;
 let instance;
-let loadingCount = 0;
 
 const loading = (message = '') => {
   if (root) {
@@ -33,23 +32,10 @@ const loading = (message = '') => {
   return instance;
 };
 
-const open = (message) => {
-  if (loadingCount++ > 0) {
-    return;
-  }
-
+export const showLoading = (message) => {
   loading(message).open();
 };
 
-const close = () => {
-  if (--loadingCount > 0) {
-    return;
-  }
-
+export const closeLoading = () => {
   instance?.close();
-};
-
-export default {
-  open,
-  close,
 };

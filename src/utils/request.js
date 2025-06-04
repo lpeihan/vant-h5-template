@@ -7,7 +7,7 @@ import { CODE_SUCCESS } from '@/utils/constants';
 let loadCount = 0;
 
 const request = axios.create({
-  timeout: 20000,
+  timeout: 30000,
 
   loading: false,
 });
