@@ -8,10 +8,8 @@ let loadCount = 0;
 
 const request = axios.create({
   timeout: 20000,
-  baseURL: 'http://121.36.106.49:8080/',
 
   loading: false,
-  toast: true,
 });
 
 request.interceptors.request.use(
@@ -39,9 +37,7 @@ request.interceptors.response.use(
       return data;
     }
 
-    if (config.toast) {
-      showToast(data.message);
-    }
+    showToast(data.message);
 
     return Promise.reject(data);
   },
@@ -52,9 +48,7 @@ request.interceptors.response.use(
       loading.close();
     }
 
-    if (config.toast) {
-      showToast(err.message);
-    }
+    showToast(err.message);
 
     return Promise.reject(err);
   },

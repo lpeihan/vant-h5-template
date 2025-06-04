@@ -1,5 +1,4 @@
 import { createPinia } from 'pinia';
-import { ConfigProvider } from 'vant';
 import VConsole from 'vconsole';
 import { createApp } from 'vue';
 
@@ -27,7 +26,7 @@ const bootstrap = () => {
   const pinia = createPinia();
   const app = createApp(App);
 
-  app.use(ConfigProvider).use(i18n).use(pinia).use(router).mount('#app');
+  app.use(i18n).use(pinia).use(router).mount('#app');
 };
 
 bootstrap();
