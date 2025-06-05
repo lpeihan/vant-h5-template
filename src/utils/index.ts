@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function getQueryString(name, url) {
@@ -47,12 +45,4 @@ export function formatWallet(walletAddress) {
   }
 
   return walletAddress.substring(0, 8) + '...' + walletAddress.substring(walletAddress.length - 8);
-}
-
-export function formatDate(date) {
-  if (!date) {
-    return;
-  }
-
-  return dayjs(date).format('YYYY-MM-DD HH:mm:ss');
 }
