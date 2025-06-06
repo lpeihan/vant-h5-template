@@ -65,29 +65,24 @@ export const connectWallet = async () => {
 
     return authority.toBase58();
   } catch (error) {
-    console.log('🚀 ~ connectWal ~ error:', error);
+    console.log('🚀 ~ connectWallet ~ error:', error);
     throw error;
   }
 };
 
 export const sendTransaction = async (transaction) => {
-  try {
-    transaction.add(
-      ComputeBudgetProgram.setComputeUnitLimit({
-        units: 500000,
-      }),
-    );
+  transaction.add(
+    ComputeBudgetProgram.setComputeUnitLimit({
+      units: 500000,
+    }),
+  );
 
-    transaction.feePayer = authority;
-    const { blockhash } = await provider.connection.getLatestBlockhash();
-    transaction.recentBlockhash = blockhash;
+  transaction.feePayer = authority;
+  const { blockhash } = await provider.connection.getLatestBlockhash();
+  transaction.recentBlockhash = blockhash;
 
-    const signature = await provider.sendAndConfirm(transaction);
-    console.log('🚀 ~ sendTransaction ~ signature:', signature);
+  const signature = await provider.sendAndConfirm(transaction);
+  console.log('🚀 ~ sendTransaction ~ signature:', signature);
 
-    return signature;
-  } catch (err) {
-    console.log('🚀 ~ sendTransaction ~ err:', err);
-    throw err;
-  }
+  return signature;
 };
