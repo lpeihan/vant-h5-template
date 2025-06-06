@@ -1,4 +1,4 @@
-import { createApp, onBeforeUnmount } from 'vue';
+import { createApp } from 'vue';
 
 import { i18n } from '@/locales';
 import router from '@/router';
@@ -19,10 +19,6 @@ export const showPopup = (Com, props = {}) => {
       root = null;
     }
   };
-
-  onBeforeUnmount(() => {
-    destroy();
-  });
 
   app = createApp(Com, {
     ...props,
