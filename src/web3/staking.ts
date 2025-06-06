@@ -1,6 +1,6 @@
 import { PublicKey } from '@solana/web3.js';
 
-import { convertBN, stakingProgram } from './core';
+import { convertBN, stakingProgram as program } from './core';
 
 const STAKING_PROGRAM_ID = new PublicKey(process.env.VUE_APP_STAKING_PROGRAM_ID);
 
@@ -10,7 +10,7 @@ const [STAKING_INSTANCE] = PublicKey.findProgramAddressSync(
 );
 
 export const fetchStakingInstance = async () => {
-  const bnResponse = await stakingProgram.account.stakingInstance.fetch(STAKING_INSTANCE);
+  const bnResponse = await program.account.stakingInstance.fetch(STAKING_INSTANCE);
 
   return convertBN(bnResponse);
 };
