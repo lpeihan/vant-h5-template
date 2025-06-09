@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { showToast } from 'vant';
 
-import { closeLoading, showLoading } from '@/components';
-import { CODE_SUCCESS } from '@/utils/constants';
+import { closeLoading, showLoading } from '../components';
+import { CODE_SUCCESS } from '../utils/constants';
 
 let loadCount = 0;
 

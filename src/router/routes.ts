@@ -7,7 +7,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       auth: true,
     },
-    component: () => import('@/views/home/Home.vue'),
+    component: () => import('../views/home/Home.vue'),
   },
   {
     path: '/mining',
@@ -15,7 +15,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       auth: true,
     },
-    component: () => import('@/views/mining/Mining.vue'),
+    component: () => import('../views/mining/Mining.vue'),
   },
   {
     path: '/service',
@@ -23,7 +23,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       auth: true,
     },
-    component: () => import('@/views/service/Service.vue'),
+    component: () => import('../views/service/Service.vue'),
   },
   {
     path: '/user',
@@ -31,7 +31,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       auth: true,
     },
-    component: () => import('@/views/user/User.vue'),
+    component: () => import('../views/user/User.vue'),
   },
 ];
 

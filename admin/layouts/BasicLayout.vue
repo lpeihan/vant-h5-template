@@ -3,7 +3,7 @@
     <a-layout style="min-height: 100vh">
       <a-layout-sider v-model:collapsed="state.collapsed" width="240px" :theme="themeStore.theme">
         <div class="logo-wrapper">
-          <img src="@/assets/images/logo.png" alt="logo" />
+          <img src="../assets/images/logo.png" alt="logo" />
         </div>
 
         <SideMenu />
