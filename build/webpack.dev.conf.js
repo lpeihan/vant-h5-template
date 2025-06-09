@@ -27,10 +27,10 @@ module.exports = merge(webpackBaseConf, cssConf, {
       reconnect: true,
     },
     proxy: [
-      {
-        context: ['/api/v1'],
-        target: '',
-      },
+      // {
+      //   context: ['/api/v1'],
+      //   target: '',
+      // },
     ],
     setupMiddlewares(middlewares, devServer) {
       require('../mocks/index')(devServer.app);

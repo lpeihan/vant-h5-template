@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
-import { formatWallet } from '@/utils';
-import { connectWallet } from '@/web3';
+import { formatWallet } from '../utils';
+import { connectWallet } from '../web3';
 
 export const useWeb3Store = defineStore('web3', {
   state: () => {

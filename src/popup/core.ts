@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 
-import { i18n } from '@/locales';
-import router from '@/router';
+import { i18n } from '../locales';
+import router from '../router';
 
 export const showPopup = (Com, props = {}) => {
   let root = document.createElement('div');

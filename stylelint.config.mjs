@@ -10,5 +10,6 @@ export default {
     'selector-class-pattern': null,
     'custom-property-empty-line-before': null,
     'declaration-property-value-no-unknown': null,
+    'custom-property-pattern': null,
   },
 };

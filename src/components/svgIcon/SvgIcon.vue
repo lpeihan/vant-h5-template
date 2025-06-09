@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import svgIcons from '@/assets/svgIcons';
+import svgIcons from '../../assets/svgIcons';
 
 // https://free-icons.github.io/free-icons/
 const props = defineProps({

@@ -1,9 +1,9 @@
 import { Locale } from 'vant';
 import { createI18n } from 'vue-i18n';
 
-import zhCN from './zh-CN';
+import storage from '../utils/storage';
 
-import storage from '@/utils/storage';
+import zhCN from './zh-CN';
 
 const DEFAULT_LANG = 'en';
 

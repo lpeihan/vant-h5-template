@@ -4,5 +4,5 @@
   "language": "en,en-US",
   "allowCompoundWords": true,
   "ignorePaths": ["node_modules", "pnpm-lock.yaml", "dist", "src/locales"],
-  "words": ["antd", "corejs", "Gdtc", "pxtorem", "unplugin", "vant", "vueuse"]
+  "words": ["antd", "Antdv", "corejs", "Gdtc", "pxtorem", "sider", "unplugin", "vant", "vueuse"]
 }

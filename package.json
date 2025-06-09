@@ -27,11 +27,13 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@coral-xyz/anchor": "^0.31.1",
     "@solana/spl-token": "^0.4.13",
     "@solana/wallet-adapter-phantom": "^0.9.27",
     "@solana/web3.js": "^1.98.2",
     "@vueuse/core": "^13.1.0",
+    "ant-design-vue": "^4.2.6",
     "axios": "^1.7.2",
     "bn.js": "^5.2.1",
     "buffer": "^6.0.3",

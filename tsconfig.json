@@ -15,7 +15,7 @@
     "useUnknownInCatchVariables": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*", "admin/*"]
     },
     "outDir": "dist",
     "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],

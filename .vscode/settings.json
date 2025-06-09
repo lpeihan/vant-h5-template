@@ -13,7 +13,7 @@
     "vue"
   ],
   "stylelint.validate": ["css", "less", "vue", "html"],
-  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.localesPaths": ["src/locales", "admin/locales"],
   "i18n-ally.keystyle": "flat",
   "i18n-ally.enabledParsers": ["json", "ts"],
   "i18n-ally.displayLanguage": "zh-CN",

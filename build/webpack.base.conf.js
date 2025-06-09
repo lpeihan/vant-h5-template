@@ -17,7 +17,7 @@ loadEnv(process.env.ENV);
 
 const entries = {
   index: './src/main.js',
-  // admin: './src/admin.js',
+  admin: './admin/main.js',
 };
 
 const htmlPlugins = Object.keys(entries).map(
@@ -102,13 +102,13 @@ module.exports = {
         test: /\.(svg)(\?.*)?$/,
         type: 'asset/resource',
         generator: { filename: 'img/[contenthash:8][ext][query]' },
-        exclude: [paths.resolve('src/assets/svgIcons')],
+        exclude: [paths.resolve('src/assets/svgIcons'), paths.resolve('admin/assets/svgIcons')],
       },
 
       {
         test: /\.(svg)(\?.*)?$/,
         generator: { filename: 'img/[contenthash:8][ext][query]' },
-        include: [paths.resolve('src/assets/svgIcons')],
+        include: [paths.resolve('src/assets/svgIcons'), paths.resolve('admin/assets/svgIcons')],
         use: [
           {
             loader: 'svg-sprite-loader',
@@ -160,7 +160,7 @@ module.exports = {
           from: paths.resolve('public'),
           toType: 'dir',
           globOptions: {
-            ignore: ['.DS_Store', '**/index.html'],
+            ignore: ['.DS_Store', '**/index.html', '**/admin.html'],
           },
           noErrorOnMissing: true,
         },
@@ -195,7 +195,8 @@ module.exports = {
     }),
 
     ComponentsPlugin({
-      dirs: [paths.resolve('src/components')],
+      // dirs: [paths.resolve('src/components')],
+      dirs: [],
       dts: false,
       resolvers: [VantResolver()],
     }),
