@@ -6,7 +6,7 @@
 
     <div class="login-form">
       <div class="logo-wrapper">
-        <img src="../assets/images/logo.png" alt="logo" width="48" />
+        <img src="../../assets/images/logo.png" alt="logo" width="48" />
         <span class="logo-text">Antdv Admin</span>
       </div>
 
