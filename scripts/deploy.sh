@@ -3,7 +3,7 @@
 ENV=${ENV}
 DIST_ZIP_NAME="dist.zip"
 REMOTE_USER="root"
-DEPLOY_PATH="/home/web"
+DEPLOY_PATH="/var/www/solana"
 ENV_FILE="$(dirname "$0")/../.env.$ENV"
 
 GREEN='\033[0;32m'
