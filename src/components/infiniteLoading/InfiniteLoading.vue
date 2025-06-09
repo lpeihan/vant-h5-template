@@ -19,7 +19,7 @@
     <template v-if="state.status === Status.Empty">
       <slot name="empty">
         <div class="empty-wrapper">
-          <!-- <img src="../../assets/images/empty.png" /> -->
+          <img src="../../assets/images/empty.png" />
           <div class="text">{{ props.emptyText || $t('noData') }}</div>
         </div>
       </slot>
@@ -28,7 +28,7 @@
     <template v-if="state.status === Status.Error">
       <slot name="error">
         <div class="error-wrapper">
-          <!-- <img src="../../assets/images/empty.png" /> -->
+          <img src="../../assets/images/empty.png" />
           <div class="text">{{ props.errorText || $t('noData') }}</div>
         </div>
       </slot>
