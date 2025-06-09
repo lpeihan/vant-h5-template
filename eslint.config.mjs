@@ -47,6 +47,13 @@ export default defineConfig([
           memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
         },
       ],
+
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: ['@/**'],
+        },
+      ],
     },
   },
   {
