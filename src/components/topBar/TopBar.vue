@@ -73,9 +73,9 @@ const handleBack = () => {
   align-items: center;
   height: var(--top-bar-height);
   overflow: hidden;
-  color: var(--text-color);
+  color: var(--van-text-color);
   text-align: center;
-  background: var(--white);
+  background: var(--van-white);
 
   &.fixed {
     position: fixed;
@@ -101,7 +101,7 @@ const handleBack = () => {
         overflow: hidden;
         pointer-events: none;
         content: '';
-        background-color: var(--black);
+        background-color: var(--van-black);
         border-radius: 50%;
         opacity: 0;
       }

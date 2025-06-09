@@ -1,11 +1,13 @@
 <template>
-  <div class="app-root">
-    <router-view v-slot="{ Component }">
-      <keep-alive :include="state.keepAlive">
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
-  </div>
+  <van-config-provider theme="light">
+    <div class="app-root">
+      <router-view v-slot="{ Component }">
+        <keep-alive :include="state.keepAlive">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+    </div>
+  </van-config-provider>
 </template>
 
 <script setup>

@@ -33,22 +33,6 @@ const routes: RouteRecordRaw[] = [
     },
     component: () => import('@/views/user/User.vue'),
   },
-  {
-    path: '/exchangeRecords',
-    name: 'exchangeRecords',
-    meta: {
-      auth: true,
-    },
-    component: () => import('@/views/service/ExchangeRecords.vue'),
-  },
-  {
-    path: '/withdrawRecords',
-    name: 'withdrawRecords',
-    meta: {
-      auth: true,
-    },
-    component: () => import('@/views/user/WithdrawRecords.vue'),
-  },
 ];
 
 export default routes;

@@ -5,7 +5,6 @@ import { createApp } from 'vue';
 import App from '@/App.vue';
 import { i18n } from '@/locales';
 import router from '@/router';
-import { useStore } from '@/store';
 import { getQueryString } from '@/utils';
 import storage from '@/utils/storage';
 
@@ -28,9 +27,6 @@ const bootstrap = () => {
   const app = createApp(App);
 
   app.use(i18n).use(pinia).use(router).mount('#app');
-
-  const store = useStore();
-  store.fetchSystemConfig();
 };
 
 bootstrap();

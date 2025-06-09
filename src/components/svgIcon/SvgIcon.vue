@@ -1,20 +1,11 @@
 <template>
-  <svg
-    class="svg-icon"
-    :class="'svg-icon-' + props.name"
-    v-bind="$attrs"
-    :style="{
-      width: getRealSize(props.size),
-      height: getRealSize(props.size),
-    }"
-  >
+  <svg class="svg-icon" :class="'svg-icon-' + props.name" v-bind="$attrs">
     <use :xlink:href="'#' + props.name" />
   </svg>
 </template>
 
 <script setup>
 import svgIcons from '@/assets/svgIcons';
-import { getRealSize } from '@/utils/dom';
 
 // https://free-icons.github.io/free-icons/
 const props = defineProps({
@@ -26,16 +17,14 @@ const props = defineProps({
       return svgIcons[val];
     },
   },
-  size: {
-    type: Number,
-    default: 16,
-  },
 });
 </script>
 
 <style lang="less" scoped>
 .svg-icon {
   display: inline-block;
+  width: 16px;
+  height: 16px;
   fill: currentcolor;
 }
 </style>

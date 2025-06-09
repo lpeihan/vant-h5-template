@@ -9,20 +9,20 @@ const DEFAULT_LANG = 'en';
 
 // https://github.com/lokalise/i18n-ally/tree/main/locales
 export const LANGUAGE_LIST = [
-  { name: '🇨🇳 繁體中文', value: 'zh-TW' },
-  // { name: '🇨🇳 简体中文', value: 'zh-CN' },
+  // { name: '🇨🇳 繁體中文', value: 'zh-TW' },
+  { name: '🇨🇳 简体中文', value: 'zh-CN' },
   { name: '🇺🇸 English', value: 'en' },
-  { name: '🇯🇵 日本語', value: 'ja' },
-  { name: '🇰🇷 한국어', value: 'ko' },
-  { name: '🇹🇭 ไทย', value: 'th' },
-  { name: '🇷🇺 Русский', value: 'ru' },
-  { name: '🇸🇦 العربية', value: 'ar' },
-  { name: '🇻🇳 Tiếng Việt', value: 'vi' },
-  { name: '🇫🇷 Français', value: 'fr' },
-  { name: '🇩🇪 Deutsch', value: 'de' },
-  { name: '🇲🇾 Bahasa Melayu', value: 'ms' },
-  { name: '🇮🇳 हिन्दी', value: 'hi' },
-  { name: '🇪🇸 Español', value: 'es' },
+  // { name: '🇯🇵 日本語', value: 'ja' },
+  // { name: '🇰🇷 한국어', value: 'ko' },
+  // { name: '🇹🇭 ไทย', value: 'th' },
+  // { name: '🇷🇺 Русский', value: 'ru' },
+  // { name: '🇸🇦 العربية', value: 'ar' },
+  // { name: '🇻🇳 Tiếng Việt', value: 'vi' },
+  // { name: '🇫🇷 Français', value: 'fr' },
+  // { name: '🇩🇪 Deutsch', value: 'de' },
+  // { name: '🇲🇾 Bahasa Melayu', value: 'ms' },
+  // { name: '🇮🇳 हिन्दी', value: 'hi' },
+  // { name: '🇪🇸 Español', value: 'es' },
 ];
 
 function setupLocale() {

@@ -1,23 +1,21 @@
 import axios from 'axios';
 import { showToast } from 'vant';
 
-import { loading } from '@/components';
+import { closeLoading, showLoading } from '@/components';
 import { CODE_SUCCESS } from '@/utils/constants';
 
 let loadCount = 0;
 
 const request = axios.create({
-  timeout: 20000,
-  baseURL: 'http://121.36.106.49:8080/',
+  timeout: 30000,
 
   loading: false,
-  toast: true,
 });
 
 request.interceptors.request.use(
   (config) => {
     if (config.loading && ++loadCount > 0) {
-      loading.open();
+      showLoading();
     }
 
     return config;
@@ -32,16 +30,14 @@ request.interceptors.response.use(
     const { config, data } = res;
 
     if (config.loading && --loadCount <= 0) {
-      loading.close();
+      closeLoading();
     }
 
     if (data.code === CODE_SUCCESS) {
       return data;
     }
 
-    if (config.toast) {
-      showToast(data.message);
-    }
+    showToast(data.message);
 
     return Promise.reject(data);
   },
@@ -49,12 +45,10 @@ request.interceptors.response.use(
     const { config } = err;
 
     if (config.loading && --loadCount <= 0) {
-      loading.close();
+      closeLoading();
     }
 
-    if (config.toast) {
-      showToast(err.message);
-    }
+    showToast(err.message);
 
     return Promise.reject(err);
   },
