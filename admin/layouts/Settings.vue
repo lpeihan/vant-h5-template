@@ -1,16 +1,16 @@
 <template>
-  <a-flex gap="small">
+  <div class="flex items-center gap-2">
     <a-popover>
       <template #content>
-        <a-flex gap="small">
+        <div class="flex gap-2">
           <div
             v-for="color in themeStore.colorPrimaryList"
             :key="color"
-            class="color-primary-item"
+            class="w-[28px] h-[28px] cursor-pointer rounded-xs"
             :style="{ background: color }"
             @click="themeStore.setColorPrimary(color)"
           />
-        </a-flex>
+        </div>
       </template>
       <icon icon="palette" :style="{ color: themeStore.colorPrimary }" />
     </a-popover>
@@ -41,18 +41,18 @@
           <a-menu>
             <a-menu-item @click="$router.push('/profile')">
               <SettingOutlined />
-              <span class="menu-item-text">{{ $t('profile') }}</span>
+              <span class="ml-[8px]">{{ $t('profile') }}</span>
             </a-menu-item>
             <a-menu-item @click="userStore.logout">
               <LogoutOutlined />
-              <span class="menu-item-text">{{ $t('logout') }}</span>
+              <span class="ml-[8px]">{{ $t('logout') }}</span>
             </a-menu-item>
           </a-menu>
         </template>
-        <a-avatar :src="userStore.userInfo.avatar" class="user-avatar" />
+        <a-avatar :src="userStore.userInfo.avatar" class="cursor-pointer" />
       </a-dropdown>
     </template>
-  </a-flex>
+  </div>
 </template>
 
 <script setup>
@@ -78,21 +78,3 @@ const userStore = useUserStore();
 const { locale } = useI18n();
 const { isFullscreen, toggle } = useFullscreen();
 </script>
-
-<style lang="less" scoped>
-.color-primary-item {
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  border-radius: var(--borderRadius);
-}
-
-.user-avatar {
-  margin-left: 8px;
-  cursor: pointer;
-}
-
-.menu-item-text {
-  margin-left: 8px;
-}
-</style>

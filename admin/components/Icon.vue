@@ -1,6 +1,6 @@
 <template>
   <a-button
-    class="inline-flex items-center justify-center"
+    class="!inline-flex items-center justify-center"
     v-bind="$attrs"
     type="text"
     shape="circle"

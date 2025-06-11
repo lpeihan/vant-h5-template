@@ -4,7 +4,7 @@
       background: token.colorBgContainer,
     }"
   >
-    <a-flex gap="small" align="center">
+    <div class="flex items-center gap-2">
       <icon
         :icon="props.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined"
         @click="props.handleCollapse"
@@ -23,7 +23,7 @@
           <span>{{ breadcrumb.name }}</span>
         </a-breadcrumb-item>
       </a-breadcrumb>
-    </a-flex>
+    </div>
 
     <Settings />
   </a-layout-header>

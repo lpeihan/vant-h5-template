@@ -6,7 +6,7 @@
       labelAlign="left"
     >
       <a-form-item label="用户名">
-        <span class="user-name">{{ userStore.userInfo.name }}</span>
+        <span class="font-bold text-[var(--primary-color)]">{{ userStore.userInfo.name }}</span>
       </a-form-item>
       <a-form-item label="头像">
         <a-avatar :src="userStore.userInfo.avatar" />
@@ -34,7 +34,7 @@
           newPassword: [{ required: true, message: '' }],
           confirmPassword: [{ required: true, message: '' }],
         }"
-        class="change-password-form"
+        class="!pt-[20px]"
         :label-col="{ style: { width: '80px' } }"
       >
         <a-form-item label="旧密码" name="oldPassword">
@@ -81,14 +81,3 @@ const handleChangePassword = () => {
   });
 };
 </script>
-
-<style lang="less" scoped>
-.user-name {
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-.change-password-form {
-  padding: 30px 0 0 10px;
-}
-</style>

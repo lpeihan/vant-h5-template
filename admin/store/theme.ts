@@ -55,6 +55,12 @@ export const useThemeStore = defineStore('theme', {
 
       Object.entries(token).forEach(([key, value]) => {
         const cssVar = `--${key}`;
+
+        if (typeof value === 'number') {
+          const isPx = /font|radius|width|height|size|margin|padding/i.test(key);
+          value = isPx ? `${value}px` : `${value}`;
+        }
+
         cssLines.push(`${cssVar}: ${value};`);
       });
 

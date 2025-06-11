@@ -1,15 +1,10 @@
 <template>
   <a-config-provider :theme="{ token: { controlHeight: 40 } }">
-    <div class="user-layout">
+    <div
+      class="h-screen bg-[var(--colorBgContainer)] bg-[url('../assets/images/bg.svg')] bg-no-repeat"
+      style="background-size: 100% 100%"
+    >
       <router-view />
     </div>
   </a-config-provider>
 </template>
-
-<style lang="less" scoped>
-.user-layout {
-  height: 100vh;
-  background: var(--colorBgContainer) url('../assets/images/bg.svg') no-repeat;
-  background-size: 100% 100%;
-}
-</style>

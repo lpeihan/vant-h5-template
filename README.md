@@ -32,6 +32,8 @@ https://www.netlify.com/
 # Convert png to ico
 https://cloudconvert.com/png-to-ico
 
+# Tailwind css
+https://tailwind.nodejs.cn/docs/padding
 ```
 
 ## .env.local
