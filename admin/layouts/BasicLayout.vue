@@ -1,16 +1,16 @@
 <template>
   <div class="basic-layout">
     <a-layout style="min-height: 100vh">
-      <a-layout-sider v-model:collapsed="state.collapsed" width="240px" :theme="themeStore.theme">
+      <a-layout-sider v-model:collapsed="collapsed" width="240px" :theme="themeStore.theme">
         <div class="logo-wrapper">
           <img src="../assets/images/logo.png" alt="logo" />
         </div>
 
-        <SideMenu :collapsed="state.collapsed" />
+        <SideMenu :collapsed="collapsed" />
       </a-layout-sider>
 
       <a-layout>
-        <Header :handleCollapse="handleCollapse" :collapsed="state.collapsed" />
+        <Header :handleCollapse="handleCollapse" :collapsed="collapsed" />
 
         <a-layout-content style="padding: 12px">
           <router-view />
@@ -21,26 +21,22 @@
 </template>
 
 <script setup>
-import { useMediaQuery } from '@vueuse/core';
-import { provide, reactive } from 'vue';
+import { useMediaQuery, useStorage } from '@vueuse/core';
+import { provide } from 'vue';
 
 import { useThemeStore } from '../store/theme';
-import storage from '../utils/storage';
 
 import Header from './Header.vue';
 import SideMenu from './SideMenu.vue';
 
 const isPC = useMediaQuery('(min-width: 768px)');
+const themeStore = useThemeStore();
+const collapsed = useStorage('collapsed', false);
 
 provide('isPC', isPC);
 
-const themeStore = useThemeStore();
-
-const state = reactive({ collapsed: storage.getItem('collapsed') });
-
 const handleCollapse = () => {
-  state.collapsed = !state.collapsed;
-  storage.setItem('collapsed', state.collapsed);
+  collapsed.value = !collapsed.value;
 };
 </script>
 

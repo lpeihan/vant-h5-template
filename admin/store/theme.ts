@@ -50,7 +50,6 @@ export const useThemeStore = defineStore('theme', {
     initColorPrimary() {
       this.setColorPrimary(this.colorPrimary);
     },
-    // 将 ant-design-vue 的 token 应用到 css 变量中
     applyAntdCssVariablesViaStyle(token) {
       const cssLines = [];
 
