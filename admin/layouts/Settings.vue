@@ -71,7 +71,7 @@ import { setLocale, SUPPORTED_LOCALES } from '../locales';
 import { useThemeStore } from '../store/theme';
 import { useUserStore } from '../store/user';
 
-const { isPC } = inject('isPC');
+const isPC = inject('isPC');
 
 const themeStore = useThemeStore();
 const userStore = useUserStore();

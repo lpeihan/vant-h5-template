@@ -40,7 +40,7 @@ import Settings from './Settings.vue';
 
 const { useToken } = theme;
 
-const { isPC } = inject('isPC');
+const isPC = inject('isPC');
 
 const props = defineProps({
   handleCollapse: {

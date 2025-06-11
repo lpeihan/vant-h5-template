@@ -30,7 +30,9 @@ import storage from '../utils/storage';
 import Header from './Header.vue';
 import SideMenu from './SideMenu.vue';
 
-provide('isPC', { isPC: useMediaQuery('(min-width: 768px)') });
+const isPC = useMediaQuery('(min-width: 768px)');
+
+provide('isPC', isPC);
 
 const themeStore = useThemeStore();
 
