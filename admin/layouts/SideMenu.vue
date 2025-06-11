@@ -88,6 +88,7 @@ watch(
 
     if (selectedKeys && openKeys) {
       state.selectedKeys = selectedKeys;
+      // 解决首次刷新，菜单折叠的时候会自动弹出的问题
       state.openKeys = props.collapsed && !oldValue ? [] : [...state.openKeys, ...openKeys];
     } else {
       state.selectedKeys = [];
