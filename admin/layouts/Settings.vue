@@ -30,7 +30,7 @@
     </a-dropdown>
 
     <icon
-      v-if="props.isPC"
+      v-if="isPC"
       :icon="isFullscreen ? FullscreenExitOutlined : FullscreenOutlined"
       @click="toggle"
     />
@@ -64,17 +64,14 @@ import {
   SettingOutlined,
 } from '@ant-design/icons-vue';
 import { useFullscreen } from '@vueuse/core';
+import { inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import { setLocale, SUPPORTED_LOCALES } from '../locales';
 import { useThemeStore } from '../store/theme';
 import { useUserStore } from '../store/user';
 
-const props = defineProps({
-  isPC: {
-    type: Boolean,
-  },
-});
+const { isPC } = inject('isPC');
 
 const themeStore = useThemeStore();
 const userStore = useUserStore();

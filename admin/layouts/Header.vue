@@ -10,9 +10,9 @@
         @click="props.handleCollapse"
       />
 
-      <icon v-if="props.isPC" :icon="ReloadOutlined" @click="handleReload" />
+      <icon v-if="isPC" :icon="ReloadOutlined" @click="handleReload" />
 
-      <a-breadcrumb v-if="props.isPC" style="margin-left: 4px">
+      <a-breadcrumb v-if="isPC" style="margin-left: 4px">
         <a-breadcrumb-item
           v-for="(breadcrumb, index) in breadcrumbs"
           :key="index"
@@ -25,20 +25,22 @@
       </a-breadcrumb>
     </a-flex>
 
-    <Settings :isPC="props.isPC" />
+    <Settings />
   </a-layout-header>
 </template>
 
 <script setup>
 import { MenuFoldOutlined, MenuUnfoldOutlined, ReloadOutlined } from '@ant-design/icons-vue';
 import { theme } from 'ant-design-vue';
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 
 import Settings from './Settings.vue';
 
 const { useToken } = theme;
+
+const { isPC } = inject('isPC');
 
 const props = defineProps({
   handleCollapse: {
@@ -48,9 +50,6 @@ const props = defineProps({
   collapsed: {
     type: Boolean,
     required: true,
-  },
-  isPC: {
-    type: Boolean,
   },
 });
 

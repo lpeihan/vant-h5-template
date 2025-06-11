@@ -6,11 +6,11 @@
           <img src="../assets/images/logo.png" alt="logo" />
         </div>
 
-        <SideMenu />
+        <SideMenu :collapsed="state.collapsed" />
       </a-layout-sider>
 
       <a-layout>
-        <Header :handleCollapse="handleCollapse" :collapsed="state.collapsed" :isPC="isPC" />
+        <Header :handleCollapse="handleCollapse" :collapsed="state.collapsed" />
 
         <a-layout-content style="padding: 12px">
           <router-view />
@@ -22,7 +22,7 @@
 
 <script setup>
 import { useMediaQuery } from '@vueuse/core';
-import { reactive } from 'vue';
+import { provide, reactive } from 'vue';
 
 import { useThemeStore } from '../store/theme';
 import storage from '../utils/storage';
@@ -30,8 +30,9 @@ import storage from '../utils/storage';
 import Header from './Header.vue';
 import SideMenu from './SideMenu.vue';
 
+provide('isPC', { isPC: useMediaQuery('(min-width: 768px)') });
+
 const themeStore = useThemeStore();
-const isPC = useMediaQuery('(min-width: 768px)');
 
 const state = reactive({ collapsed: storage.getItem('collapsed') });
 

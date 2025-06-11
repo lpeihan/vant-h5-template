@@ -23,6 +23,11 @@ const SELECTED_KEYS_MAP = {};
 const OPEN_KEYS_MAP = {};
 
 const emit = defineEmits(['select']);
+const props = defineProps({
+  collapsed: {
+    type: Boolean,
+  },
+});
 
 const { locale, t } = useI18n();
 const themeStore = useThemeStore();
@@ -77,13 +82,13 @@ watch(locale, () => {
 
 watch(
   route,
-  () => {
+  (value, oldValue) => {
     const selectedKeys = SELECTED_KEYS_MAP[route.path];
     const openKeys = OPEN_KEYS_MAP[route.path];
 
     if (selectedKeys && openKeys) {
       state.selectedKeys = selectedKeys;
-      state.openKeys = [...state.openKeys, ...openKeys];
+      state.openKeys = props.collapsed && !oldValue ? [] : [...state.openKeys, ...openKeys];
     } else {
       state.selectedKeys = [];
     }
