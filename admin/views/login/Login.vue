@@ -1,10 +1,10 @@
 <template>
-  <div class="login-page flex items-center justify-center h-screen">
+  <div class="flex items-center justify-center h-screen">
     <div class="fixed top-[16px] right-[16px]">
       <Settings />
     </div>
 
-    <div class="login-form">
+    <div>
       <div class="flex items-center justify-center gap-3 mb-[30px]">
         <img src="../../assets/images/logo.png" alt="logo" width="48" />
         <span class="text-xl font-bold">Antdv Admin</span>
