@@ -1,20 +1,20 @@
 <template>
-  <div class="analysis-page">
+  <div>
     <a-row :gutter="[12, 12]">
       <a-col v-for="item in overviews" :key="item.title" :xs="24" :sm="12" :lg="6">
-        <a-card hoverable class="overview-item">
-          <div class="title">
+        <a-card hoverable>
+          <div class="text-base font-bold">
             {{ item.title }}
           </div>
 
-          <div class="icon-wrapper">
-            <div class="value">{{ item.value.toLocaleString() }}</div>
-            <svg-icon :name="item.icon" />
+          <div class="flex items-center justify-between py-[16px]">
+            <div class="text-base">{{ item.value.toLocaleString() }}</div>
+            <svg-icon :name="item.icon" class="w-[36px] h-[36px]" />
           </div>
 
-          <div class="total-wrapper">
-            <div class="total-title">{{ item.totalTitle }}</div>
-            <div class="total-value">
+          <div class="flex items-center justify-between">
+            <div>{{ item.totalTitle }}</div>
+            <div>
               {{ item.totalValue.toLocaleString() }}
             </div>
           </div>
@@ -58,36 +58,3 @@ const overviews = computed(() => [
   },
 ]);
 </script>
-
-<style lang="less" scoped>
-.analysis-page {
-  .overview-item {
-    .title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .icon-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-
-      .value {
-        font-size: 18px;
-      }
-
-      .svg-icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
-
-    .total-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-}
-</style>

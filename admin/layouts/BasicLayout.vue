@@ -2,8 +2,8 @@
   <div class="basic-layout">
     <a-layout style="min-height: 100vh">
       <a-layout-sider v-model:collapsed="collapsed" width="240px" :theme="themeStore.theme">
-        <div class="logo-wrapper">
-          <img src="../assets/images/logo.png" alt="logo" />
+        <div class="flex items-center justify-center h-[64px]">
+          <img src="../assets/images/logo.png" alt="logo" class="w-[36px]" />
         </div>
 
         <SideMenu :collapsed="collapsed" />
@@ -12,7 +12,7 @@
       <a-layout>
         <Header :handleCollapse="handleCollapse" :collapsed="collapsed" />
 
-        <a-layout-content style="padding: 12px">
+        <a-layout-content class="p-[12px]">
           <router-view />
         </a-layout-content>
       </a-layout>
@@ -42,17 +42,6 @@ const handleCollapse = () => {
 
 <style lang="less" scoped>
 .basic-layout {
-  .logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 64px;
-
-    img {
-      width: 36px;
-    }
-  }
-
   .ant-layout-sider-light {
     border-right: 1px solid var(--colorBorderSecondary);
   }

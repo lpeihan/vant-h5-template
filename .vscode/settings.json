@@ -19,5 +19,6 @@
   "i18n-ally.displayLanguage": "zh-CN",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "css.lint.unknownAtRules": "ignore"
 }

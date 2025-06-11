@@ -93,11 +93,8 @@ const navigateTo = (breadcrumb) => {
 };
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .ant-layout-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
+  @apply flex items-center justify-between px-[16px];
 }
 </style>

@@ -10,6 +10,7 @@ import { useThemeStore } from './store/theme';
 
 import 'ant-design-vue/dist/reset.css';
 import './styles/index.less';
+import './styles/tailwind.css';
 
 window.env = process.env;
 
