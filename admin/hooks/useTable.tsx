@@ -3,15 +3,32 @@ import { computed, onMounted, ref } from 'vue';
 
 import { formatTime } from '../utils/formatter';
 
+import { useClipboard } from './useClipboard';
+
 function formatColumns(columns: TableColumnProps[]) {
-  const TIME_FIELDS = ['created_at', 'updated_at'];
+  const { copy } = useClipboard();
+
+  const customRender = (item) => {
+    if (['created_at', 'updated_at'].includes(item.dataIndex as string)) {
+      return {
+        customRender: ({ text }) => formatTime(text),
+        width: 200,
+      };
+    }
+
+    if (item.link) {
+      return {
+        customRender: ({ text }) => <a onClick={() => copy(text)}>{text}</a>,
+      };
+    }
+
+    return null;
+  };
 
   return columns.map((item) => ({
     align: 'center',
     ...item,
-    customRender: TIME_FIELDS.includes(item.dataIndex as string)
-      ? ({ text }) => formatTime(text)
-      : null,
+    ...customRender(item),
   }));
 }
 
@@ -39,11 +56,12 @@ export const useTable = (options) => {
     },
   });
   const selectedRowKeys = ref([]);
+  const formattedColumns = formatColumns(columns);
 
   const searchParams = ref({ ...defaultSearchParams });
 
   const scroll = {
-    x: columns.reduce((acc, item) => acc + (item.width || 100), 0),
+    x: formattedColumns.reduce((acc, item) => acc + Number(item.width), 0),
   };
 
   const fetchList = async () => {
@@ -91,7 +109,7 @@ export const useTable = (options) => {
 
   const tableProps = computed(() => ({
     dataSource: dataSource.value,
-    columns: formatColumns(columns),
+    columns: formattedColumns,
     scroll,
     loading: loading.value,
     pagination: pagination.value,

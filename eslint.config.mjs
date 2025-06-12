@@ -13,7 +13,7 @@ export default defineConfig([
   },
   tseslint.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,vue}'],
+    files: ['**/*.{js,mjs,cjs,ts,vue,tsx}'],
     plugins: { js },
     extends: ['js/recommended'],
     rules: {
