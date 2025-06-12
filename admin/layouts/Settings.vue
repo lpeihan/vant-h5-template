@@ -6,7 +6,7 @@
           <div
             v-for="color in themeStore.colorPrimaryList"
             :key="color"
-            class="w-[28px] h-[28px] cursor-pointer rounded-xs"
+            class="h-[28px] w-[28px] cursor-pointer rounded-xs"
             :style="{ background: color }"
             @click="themeStore.setColorPrimary(color)"
           />

@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="w-[16px] h-[16px] inline-block fill-current"
+    class="inline-block h-[16px] w-[16px] fill-current"
     :class="'svg-icon-' + props.name"
     v-bind="$attrs"
   >

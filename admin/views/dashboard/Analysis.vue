@@ -9,7 +9,7 @@
 
           <div class="flex items-center justify-between py-[16px]">
             <div class="text-base">{{ item.value.toLocaleString() }}</div>
-            <svg-icon :name="item.icon" class="w-[36px] h-[36px]" />
+            <svg-icon :name="item.icon" class="h-[36px] w-[36px]" />
           </div>
 
           <div class="flex items-center justify-between">

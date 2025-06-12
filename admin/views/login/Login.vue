@@ -1,11 +1,11 @@
 <template>
-  <div class="flex items-center justify-center h-screen">
+  <div class="flex h-screen items-center justify-center">
     <div class="fixed top-[16px] right-[16px]">
       <Settings />
     </div>
 
     <div>
-      <div class="flex items-center justify-center gap-3 mb-[30px]">
+      <div class="mb-[30px] flex items-center justify-center gap-3">
         <img src="../../assets/images/logo.png" alt="logo" width="48" />
         <span class="text-xl font-bold">Antdv Admin</span>
       </div>
@@ -27,7 +27,7 @@
           </a-input-password>
         </a-form-item>
 
-        <div class="flex items-center justify-between my-[30px]">
+        <div class="my-[30px] flex items-center justify-between">
           <a-checkbox v-model:checked="form.remember">
             {{ $t('rememberMe') }}
           </a-checkbox>
