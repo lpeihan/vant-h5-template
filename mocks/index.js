@@ -34,7 +34,7 @@ module.exports = (app) => {
     res.json({
       code: CODE_SUCCESS,
       data: {
-        list: Array.from({ length: 10 }, () => ({
+        list: Array.from({ length: req.query.pageSize || 10 }, () => ({
           id: faker.number.int({ min: 1, max: 1000 }),
           name: faker.person.fullName(),
           description: faker.lorem.sentence(),
