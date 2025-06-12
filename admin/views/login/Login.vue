@@ -10,7 +10,7 @@
         <span class="text-xl font-bold">Antdv Admin</span>
       </div>
 
-      <a-form :model="form" name="basic" autocomplete="off" class="w-[360px]" @finish="onFinish">
+      <a-form :model="form" autocomplete="off" class="w-[360px]" @finish="onFinish">
         <a-form-item name="username" :rules="{ required: true, message: '' }">
           <a-input v-model:value="form.username" :placeholder="$t('username')">
             <template #prefix>

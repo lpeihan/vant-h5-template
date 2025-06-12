@@ -25,6 +25,7 @@ module.exports = (app) => {
         email: faker.internet.email(),
         roles: [faker.helpers.arrayElement(['admin', 'user'])],
         status: faker.helpers.arrayElement(['active', 'inactive']),
+        password: faker.internet.password(),
       },
     });
   });
@@ -43,6 +44,7 @@ module.exports = (app) => {
           email: faker.internet.email(),
           roles: [faker.helpers.arrayElement(['admin', 'user'])],
           status: faker.helpers.arrayElement(['active', 'inactive']),
+          password: faker.internet.password(),
         })),
       },
     });
