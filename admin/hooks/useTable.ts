@@ -1,4 +1,19 @@
+import { TableColumnProps } from 'ant-design-vue';
 import { computed, onMounted, ref } from 'vue';
+
+import { formatTime } from '../utils/formatter';
+
+function formatColumns(columns: TableColumnProps[]) {
+  const TIME_FIELDS = ['created_at', 'updated_at'];
+
+  return columns.map((item) => ({
+    align: 'center',
+    ...item,
+    customRender: TIME_FIELDS.includes(item.dataIndex as string)
+      ? ({ text }) => formatTime(text)
+      : null,
+  }));
+}
 
 export const useTable = (options) => {
   const {
@@ -76,7 +91,7 @@ export const useTable = (options) => {
 
   const tableProps = computed(() => ({
     dataSource: dataSource.value,
-    columns,
+    columns: formatColumns(columns),
     scroll,
     loading: loading.value,
     pagination: pagination.value,

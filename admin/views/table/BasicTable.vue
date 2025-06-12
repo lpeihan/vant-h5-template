@@ -50,13 +50,11 @@
 import { fetchUserList } from '../../api';
 import { useClipboard } from '../../hooks/useClipboard';
 import { useTable } from '../../hooks/useTable';
-import { formatTime } from '../../utils/formatter';
 
 const columns = [
   {
     title: 'ID',
     dataIndex: 'id',
-    align: 'center',
     sorter: true,
     fixed: 'left',
     width: 100,
@@ -64,39 +62,31 @@ const columns = [
   {
     title: '用户名',
     dataIndex: 'name',
-    align: 'center',
     width: 200,
   },
   {
     title: '头像',
     dataIndex: 'avatar',
-    align: 'center',
     width: 150,
   },
   {
     title: '邮箱',
     dataIndex: 'email',
-    align: 'center',
     width: 200,
   },
   {
     title: '创建时间',
     dataIndex: 'created_at',
-    align: 'center',
     width: 200,
-    customRender: ({ text }) => formatTime(text),
   },
   {
     title: '更新时间',
     dataIndex: 'updated_at',
-    align: 'center',
     width: 200,
-    customRender: ({ text }) => formatTime(text),
   },
   {
     title: '操作',
     dataIndex: 'action',
-    align: 'center',
     fixed: 'right',
     width: 100,
   },
