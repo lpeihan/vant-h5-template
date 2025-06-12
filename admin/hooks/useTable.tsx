@@ -8,7 +8,7 @@ import { useClipboard } from './useClipboard';
 function formatColumns(columns: TableColumnProps[]) {
   const { copy } = useClipboard();
 
-  const customRender = (item) => {
+  const getCommonProps = (item) => {
     if (['created_at', 'updated_at'].includes(item.dataIndex as string)) {
       return {
         customRender: ({ text }) => formatTime(text),
@@ -27,8 +27,8 @@ function formatColumns(columns: TableColumnProps[]) {
 
   return columns.map((item) => ({
     align: 'center',
+    ...getCommonProps(item),
     ...item,
-    ...customRender(item),
   }));
 }
 
