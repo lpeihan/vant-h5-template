@@ -1,6 +1,6 @@
 'use strict';
 
-const { codeInspectorPlugin } = require('code-inspector-plugin');
+// const { codeInspectorPlugin } = require('code-inspector-plugin');
 const ProgressPlugin = require('progress-webpack-plugin');
 const { merge } = require('webpack-merge');
 
@@ -14,16 +14,16 @@ module.exports = merge(webpackBaseConf, cssConf, {
 
   plugins: [
     new ProgressPlugin(true),
-    codeInspectorPlugin({
-      bundler: 'webpack',
-    }),
+    // codeInspectorPlugin({
+    //   bundler: 'webpack',
+    // }),
   ],
 
   devServer: {
     historyApiFallback: {
       rewrites: [{ from: /./, to: '/index.html' }],
     },
-    open: true,
+    open: false,
     host: '0.0.0.0',
     port: 8088,
     hot: true,
@@ -33,10 +33,10 @@ module.exports = merge(webpackBaseConf, cssConf, {
       reconnect: true,
     },
     proxy: [
-      {
-        context: ['/api/v1'],
-        target: '',
-      },
+      // {
+      //   context: ['/api/v1'],
+      //   target: '',
+      // },
     ],
     setupMiddlewares(middlewares, devServer) {
       require('../mocks/index')(devServer.app);

@@ -32,7 +32,7 @@ const genStyleRules = () => {
     loader: 'postcss-loader',
     options: {
       postcssOptions: {
-        config: paths.resolve('postcss.config.js'),
+        config: paths.resolve('postcss.config.mjs'),
       },
     },
   };

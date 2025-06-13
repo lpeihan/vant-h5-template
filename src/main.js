@@ -14,6 +14,7 @@ import 'vant/es/notify/style';
 import 'vant/es/image-preview/style';
 
 import '@/styles/index.less';
+import '@/styles/tailwind.css';
 
 window.env = process.env;
 
