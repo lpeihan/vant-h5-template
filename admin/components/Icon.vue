@@ -1,6 +1,6 @@
 <template>
   <a-button
-    class="icon-comp"
+    class="icon-component"
     v-bind="$attrs"
     type="text"
     shape="circle"
