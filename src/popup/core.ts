@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 
+import components from '../components';
 import { i18n } from '../locales';
 import router from '../router';
 
@@ -27,7 +28,7 @@ export const showPopup = (Com, props = {}) => {
     },
   });
 
-  const instance = app.use(i18n).use(router).mount(root);
+  const instance = app.use(i18n).use(router).use(components).mount(root);
 
   instance.open();
   return instance;

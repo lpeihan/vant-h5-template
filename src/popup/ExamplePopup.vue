@@ -1,6 +1,9 @@
 <template>
   <van-popup v-model:show="state.show" round :close-on-click-overlay="false" closeable>
-    <div class="popup-content">Example</div>
+    <div class="popup-content">
+      Example
+      <svg-icon name="back" />
+    </div>
   </van-popup>
 </template>
 
