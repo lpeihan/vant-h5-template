@@ -28,6 +28,7 @@ compiler.hooks.done.tap('serve', (stats) => {
   console.log(`App running at:`);
   console.log(`  - Local:   ${chalk.cyan(`${protocol}://localhost:${port}`)}`);
   console.log(`  - Network: ${chalk.cyan(`${protocol}://${getLocalIP()}:${port}`)}`);
+  console.log(`  - Admin:   ${chalk.cyan(`${protocol}://localhost:${port}/admin.html`)}`);
   console.log();
 });
 

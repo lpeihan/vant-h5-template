@@ -6,6 +6,7 @@
     "streetsidesoftware.code-spell-checker",
     "ChakrounAnas.turbo-console-log",
     "lokalise.i18n-ally",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "vscode-icons-team.vscode-icons"
   ]
 }
