@@ -1,0 +1,5 @@
+{
+  "watch": ["mocks/index.js", ".env.test", ".env.local"],
+  "ext": "js,json",
+  "ignore": ["node_modules", "dist"]
+}

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development ENV=local node build/dev-server.js",
+    "serve": "cross-env NODE_ENV=development ENV=local nodemon build/dev-server.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "analyze": "cross-env NODE_ENV=production npm_config_report=true npm run build",
     "deploy:test": "cross-env ENV=test sh -c 'npm run build && ./scripts/deploy.sh'",
@@ -85,6 +85,7 @@
     "less-loader": "^12.3.0",
     "lint-staged": "^15.5.1",
     "mini-css-extract-plugin": "^2.9.2",
+    "nodemon": "^3.1.10",
     "ora": "^5.4.1",
     "postcss": "^8.5.3",
     "postcss-less": "^6.0.0",
