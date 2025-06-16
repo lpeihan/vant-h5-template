@@ -1,5 +1,5 @@
 {
-  "watch": ["mocks/index.js", ".env.test", ".env.local"],
+  "watch": ["mocks/index.js", ".env.test", ".env.local", "eslint.config.mjs"],
   "ext": "js,json",
   "ignore": ["node_modules", "dist"]
 }
