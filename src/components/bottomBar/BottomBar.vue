@@ -26,26 +26,26 @@ const list = computed(() => {
     {
       name: t('home'),
       path: '/',
-      icon: require('./home.png'),
-      activeIcon: require('./home_active.png'),
+      icon: require('./images/home.png'),
+      activeIcon: require('./images/home_active.png'),
     },
     {
       name: t('mining'),
       path: '/mining',
-      icon: require('./mining.png'),
-      activeIcon: require('./mining_active.png'),
+      icon: require('./images/mining.png'),
+      activeIcon: require('./images/mining_active.png'),
     },
     {
       name: t('service'),
       path: '/service',
-      icon: require('./service.png'),
-      activeIcon: require('./service_active.png'),
+      icon: require('./images/service.png'),
+      activeIcon: require('./images/service_active.png'),
     },
     {
       name: t('user'),
       path: '/user',
-      icon: require('./user.png'),
-      activeIcon: require('./user_active.png'),
+      icon: require('./images/user.png'),
+      activeIcon: require('./images/user_active.png'),
     },
   ];
 });
