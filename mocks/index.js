@@ -2,6 +2,18 @@ const { faker } = require('@faker-js/faker');
 
 const CODE_SUCCESS = 200;
 
+const getUserData = () => ({
+  id: faker.number.int({ min: 1, max: 1000 }),
+  name: faker.person.fullName(),
+  description: faker.lorem.sentence(),
+  created_at: faker.date.recent(),
+  updated_at: faker.date.recent(),
+  avatar: faker.image.avatar(),
+  email: faker.internet.email(),
+  roles: [faker.helpers.arrayElement(['admin', 'user'])],
+  status: faker.helpers.arrayElement(['active', 'inactive']),
+});
+
 module.exports = (app) => {
   app.post('/mock/user/login', (req, res) => {
     res.json({
@@ -15,17 +27,7 @@ module.exports = (app) => {
   app.get('/mock/user/info', (req, res) => {
     res.json({
       code: CODE_SUCCESS,
-      data: {
-        id: faker.string.uuid(),
-        name: faker.person.fullName(),
-        description: faker.lorem.sentence(),
-        created_at: faker.date.recent(),
-        updated_at: faker.date.recent(),
-        avatar: faker.image.avatar(),
-        email: faker.internet.email(),
-        roles: [faker.helpers.arrayElement(['admin', 'user'])],
-        status: faker.helpers.arrayElement(['active', 'inactive']),
-      },
+      data: getUserData(),
     });
   });
 
@@ -33,17 +35,7 @@ module.exports = (app) => {
     res.json({
       code: CODE_SUCCESS,
       data: {
-        list: Array.from({ length: 10 }, () => ({
-          id: faker.number.int({ min: 1, max: 1000 }),
-          name: faker.person.fullName(),
-          description: faker.lorem.sentence(),
-          created_at: faker.date.recent(),
-          updated_at: faker.date.recent(),
-          avatar: faker.image.avatar(),
-          email: faker.internet.email(),
-          roles: [faker.helpers.arrayElement(['admin', 'user'])],
-          status: faker.helpers.arrayElement(['active', 'inactive']),
-        })),
+        list: Array.from({ length: 10 }, () => getUserData()),
       },
     });
   });
